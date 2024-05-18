@@ -27,3 +27,16 @@ if total_spending < 0:
     monthly_budget = "Invalid input. Totaly spending cannot be negative."
 else: 
     monthly_budget = total_spending - (average_daily_spending * total_days)
+
+#To use the function and display the results
+monthly_budget, average_daily_spending = calculate_monthly_budget()
+print(f"Total spending for the month: ${monthly_budget:.2f}")
+print(f"Average daily spending: ${average_daily_spending:.2f}")
+
+#Determine if the budget was met or not 
+if total_spending > monthly_budget:
+        budget_status = "over budget"
+elif total_spending < monthly_budget:
+        budget_status = "under budget"
+else:
+        budget_status = "on budget"
